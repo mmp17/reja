@@ -1,4 +1,27 @@
+// =================================================================
+//A-Task:
+// =================================================================
+
+//Shunday 2 parametrli function tuzing, hamda birinchi parametrdagi letterni ikkinchi parametrdagi sozdan qatnashga sonini return qilishi kerak. Masalan, countLetter("e", "engineer") 3ni return qiladi.
+
+// function countLetter(letter, word) {
+//     let count = 0;
+
+//     for (let i=0; i < word.length; i++) {
+//       if (letter == word[i]) {
+//         count ++
+//       }
+//     }
+//     return count
+//   }
+
+//   result = countLetter("f", "muzaffar");
+
+//   console.log(result)
+
+// =================================================================
 // B-Task:
+// =================================================================
 
 // Shunday function tuzing, u 1ta parametr ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini return qilsin.
 
