@@ -5,11 +5,17 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "train": "nodemon train.js",
+    "task": "nodemon task.js"
   },
   "author": "joseph",
   "license": "MIT",
   "dependencies": {
-    "moment": "^2.29.4"
+    "chalk": "^4.1.2",
+    "inquirer": "^8.2.6",
+    "moment": "^2.29.4",
+    "uuid": "^9.0.1",
+    "validator": "^13.11.0"
   }
 }
