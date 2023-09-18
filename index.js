@@ -23,7 +23,9 @@
 // Hisob 3
 // Hisob 4
 
-// using file system
+//================================================================
+// Model Package FILE
+//================================================================
 
 // const fs = require("fs");
 // const data = fs.readFileSync("./input.txt", "utf8");
@@ -88,11 +90,7 @@ const moment = require("moment");
 
 //(5) chalk - Terminal string styling
 
-const chalk = require("chalk");
-console.log(
-  chalk.blue("Welcome ") + chalk.yellow("Students") + chalk.green("!!!")
-);
-
-//================================================================
-// Model Package FILE
-//================================================================
+// const chalk = require("chalk");
+// console.log(
+//   chalk.blue("Welcome ") + chalk.yellow("Students") + chalk.green("!!!")
+// );
