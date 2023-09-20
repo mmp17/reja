@@ -26,32 +26,35 @@
 //================================================================
 // Model Package FILE
 //================================================================
-
+//(1)
 // const fs = require("fs");
 // const data = fs.readFileSync("./section_three/input.txt", "utf8");
 // console.log(data);
 
 // console.log("********************************");
-
+//(2)
 // fs.writeFileSync("./input.txt", `${data} \n\t\t by Joseph WebDev`);
 // const new_data = fs.readFileSync("./input.txt", "utf8");
 // console.log(new_data);
 
 //What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
+//(3)
 // Using Calculator File module
 
-const calculate = require("./section_three/calculator");
+// const calculate = require("./section_three/calculator");
 
-let multiplied = calculate.multiply(80, 20);
-let divided = calculate.divide(80, 20);
-let added = calculate.add(80, 20);
-let subtracted = calculate.subtract(80, 20);
+// let multiplied = calculate.multiply(80, 20);
+// let divided = calculate.divide(80, 20);
+// let added = calculate.add(80, 20);
+// let subtracted = calculate.subtract(80, 20);
 
-console.log(multiplied); //1600
-console.log(divided); //4
-console.log(added); //100
-console.log(subtracted); //60
+// console.log(multiplied); //1600
+// console.log(divided); //4
+// console.log(added); //100
+// console.log(subtracted); //60
+
+//(4)
 
 //================================================================
 // Model Package External
@@ -60,7 +63,7 @@ console.log(subtracted); //60
 //npm install moment --save --save=> projectni uziga install qiladi
 //https://momentjs.com/docs/
 
-const moment = require("moment");
+//const moment = require("moment");
 
 //(1)
 //const time = moment().format("YYYY-MM-DD");

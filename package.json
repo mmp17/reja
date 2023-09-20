@@ -7,12 +7,14 @@
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "train": "nodemon train.js",
-    "task": "nodemon task.js"
+    "task": "nodemon task.js",
+    "server": "nodemon server.js"
   },
   "author": "joseph",
   "license": "MIT",
   "dependencies": {
     "chalk": "^4.1.2",
+    "express": "^4.18.2",
     "inquirer": "^8.2.6",
     "moment": "^2.29.4",
     "uuid": "^9.0.1",
