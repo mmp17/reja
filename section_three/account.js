@@ -50,3 +50,5 @@ class Account {
     console.log("This account servs you with making account numbers");
   }
 }
+
+module.exports = Account;
