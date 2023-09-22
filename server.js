@@ -1,5 +1,6 @@
 console.log("Server started");
 const express = require("express");
+const res = require("express/lib/response");
 const app = express();
 const http = require("http");
 
@@ -15,7 +16,13 @@ app.set("views", "views");
 app.set("view engine", "ejs");
 
 //4 Routing codes - BSSR
+app.post("/create-item", (req, res) => {
+  console.log("req.body", req.body);
+  res.json({ test: "success" });
+});
+
 app.get("/", (req, res) => {
+  // console.log("req.body", req);
   res.render("project");
 });
 
