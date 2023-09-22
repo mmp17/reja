@@ -16,9 +16,7 @@ app.set("view engine", "ejs");
 
 //4 Routing codes - BSSR
 app.get("/", (req, res) => {
-  res.end(
-    "<h1 style='background: lightgrey; text-align: center'>Home Page</h1>"
-  );
+  res.render("project");
 });
 
 app.get("/hello", (req, res) => {
