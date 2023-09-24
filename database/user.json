@@ -1,0 +1,60 @@
+{
+  "name": "Joseph",
+  "profession": "MERN FullStack Dev",
+  "age": 20,
+  "residence": "South Korea",
+  "address": "Daegu, South Korea",
+  "languages": ["Uzbek", "Korean", "English"],
+  "skills": ["HTML", "CSS", "JS", "Nodejs", "Python"],
+  "extra_skills": [
+    "Bootstrap, Materialize",
+    "Styling, Sass",
+    "Django, Flask",
+    "GIT Knowledge"
+  ],
+  "work_place": "Full Stack Developer in IT Company",
+  "service_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat feugiat placerat lobortis. Natoque rutrum semper sed suspendisse nunc lectus.",
+  "about_me": "Currently working as software developer and developing web sites and web applications. Like working with new people and taking new challenges.",
+  "city": "Samarkand",
+  "title": ["Flower", "Seedlings", "Gardner", "Old", "New"],
+  "flower_desc": ["What is a Flower?", "What is a Seedling", "Who is Gardner"],
+  "flower_name": [
+    "Tulip",
+    "Daffodil",
+    "Poppy",
+    "Sunflower",
+    "Bluebell",
+    "Rose",
+    "Snowdrop",
+    "Cherry",
+    "Blossom"
+  ],
+  "flower_price": [
+    "15$",
+    "25$",
+    "12$",
+    "20$",
+    "35$",
+    "30$",
+    "22$",
+    "17$",
+    "9$"
+  ],
+  "famous_words": ["World is Beautiful with Flowers"],
+  "famous_name": ["Steve Jobs"],
+  "service_types": [
+    "Web Development",
+    "UI/UX Design",
+    "Sound Design",
+    "Game Design",
+    "Photography",
+    "Advertising"
+  ],
+  "service_type_desc": [
+    "My web development services include both front-end and back-end development.",
+    "Mobile App, Website Design",
+    "Voice Over, Beat Making",
+    "Character Design, Props & Objects",
+    "Portrait, Product Photography"
+  ]
+}
