@@ -1,8 +1,17 @@
 console.log("Server started");
 const express = require("express");
-const res = require("express/lib/response");
 const app = express();
 const http = require("http");
+const fs = require("fs");
+
+let user;
+fs.readFile("database/user.json", "utf8", (err, data) => {
+  if (err) {
+    console.log("ERROR:", err);
+  } else {
+    user = JSON.parse(data);
+  }
+});
 
 //1 Entry codes
 app.use(express.static("public"));
@@ -19,6 +28,10 @@ app.set("view engine", "ejs");
 app.post("/create-item", (req, res) => {
   console.log("req.body", req.body);
   res.json({ test: "success" });
+});
+
+app.get("/author", (req, res) => {
+  res.render("author", { user: user });
 });
 
 app.get("/", (req, res) => {
