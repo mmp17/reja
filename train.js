@@ -13,29 +13,29 @@ const list = [
   "Endi dam oling, foydasi yo'q endi", // 60
 ];
 
-function maslahatBering(a, callback) {
-  if (typeof a !== "number") callback("Enter a number", null);
-  else if (a <= 20) callback(null, list[0]);
-  else if (a > 20 && a <= 30) callback(null, list[1]);
-  else if (a > 30 && a <= 40) callback(null, list[2]);
-  else if (a > 40 && a <= 50) callback(null, list[3]);
-  else if (a > 50 && a <= 60) callback(null, list[4]);
-  else {
-    // callback(null, list[5]);
-    setTimeout(function () {
-      callback(null, list[5]);
-    }, 5000);
-  }
-}
+// function maslahatBering(a, callback) {
+//   if (typeof a !== "number") callback("Enter a number", null);
+//   else if (a <= 20) callback(null, list[0]);
+//   else if (a > 20 && a <= 30) callback(null, list[1]);
+//   else if (a > 30 && a <= 40) callback(null, list[2]);
+//   else if (a > 40 && a <= 50) callback(null, list[3]);
+//   else if (a > 50 && a <= 60) callback(null, list[4]);
+//   else {
+//     // callback(null, list[5]);
+//     setTimeout(function () {
+//       callback(null, list[5]);
+//     }, 5000);
+//   }
+// }
 
-console.log("Passed here 0");
-maslahatBering(65, (err, data) => {
-  if (err) console.error("Error:", err);
-  else {
-    console.log("Javob:", data);
-  }
-});
-console.log("Passed here 1");
+// console.log("Passed here 0");
+// maslahatBering(65, (err, data) => {
+//   if (err) console.error("Error:", err);
+//   else {
+//     console.log("Javob:", data);
+//   }
+// });
+// console.log("Passed here 1");
 
 // OutputL:
 // Jack Ma maslahatlari
@@ -43,6 +43,87 @@ console.log("Passed here 1");
 // Passed here 1
 // Javob: Endi dam oling, foydasi yo'q endi
 
+// =================================================================
+// Jack Ma maslahatlari: Asynchronous functionlarni qo'llash
+// =================================================================
+
+async function maslahatBering(a, callback) {
+  if (typeof a !== "number") throw new Error("Enter a number");
+  else if (a <= 20) return list[0];
+  else if (a > 20 && a <= 30) return list[1];
+  else if (a > 30 && a <= 40) return list[2];
+  else if (a > 40 && a <= 50) return list[3];
+  else if (a > 50 && a <= 60) return list[4];
+  else {
+    //using setTimeout with promise
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(list[5]);
+      }, 5000);
+    });
+
+    // return list[5];
+    // setTimeout(function () { //does not work here
+    //   return list[5];
+    // }, 5000);
+  }
+}
+
+//********* then, catch method *********//
+// console.log("Passed here 0");
+
+// maslahatBering(15)
+//   .then((data) => {
+//     console.log("Answers:", data);
+//   })
+//   .catch((err) => {
+//     console.log("Error:", err);
+//   });
+
+// console.log("Passed here 1");
+
+//********* async await *********//
+async function run() {
+  let answer = await maslahatBering(15);
+  console.log("Answer:", answer);
+  answer = await maslahatBering(25);
+  console.log("Answer:", answer);
+  answer = await maslahatBering(35);
+  console.log("Answer:", answer);
+  answer = await maslahatBering(45);
+  console.log("Answer:", answer);
+  answer = await maslahatBering(55);
+  console.log("Answer:", answer);
+  answer = await maslahatBering(65);
+  console.log("Answer:", answer);
+}
+
+run();
+
+//callback hell:
+// maslahatBering(15)
+//   .then((data) => {
+//     maslahatBering(30)
+//       .then((data) => {
+//         maslahatBering(45)
+//           .then((data) => {
+//             console.log("Answers:", data);
+//           })
+//           .catch((err) => {
+//             console.log("Error:", err);
+//           });
+//         console.log("Answers:", data);
+//       })
+//       .catch((err) => {
+//         console.log("Error:", err);
+//       });
+//     console.log("Answers:", data);
+//   })
+//   .catch((err) => {
+//     console.log("Error:", err);
+//   });
+
+// async function ni ichida setTimeout kabi core fn lar ishlamaydi!!
 // =================================================================
 // D-Task:
 // =================================================================
