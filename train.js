@@ -1,4 +1,16 @@
 // =================================================================
+// E-Task:
+// =================================================================
+
+// Shunday function tuzing, u bitta string argumentni qabul qilib osh stringni teskari qilib return qilsin
+// masalan: getReverse("hello") return qilsin "olleh"
+
+function getReverse(word) {
+  let result = word.split("").reverse().join("");
+  console.log(result);
+}
+getReverse("hello");
+// =================================================================
 // Jack Ma maslahatlari: Callback function
 // =================================================================
 
