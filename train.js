@@ -1,15 +1,39 @@
 // =================================================================
+// F-Task:
+// =================================================================
+
+// findDoublers function tuzing, unga faqat bitta string argument pass bolib, agar stringda bir hil harf qatnashgan bolsa true, qatnashmasa false qaytarishi kerak.
+
+// masalan: findDoublers("hello") return true return qiladi
+
+function findDoublers(str) {
+  const letterCounter = {};
+
+  for (const letter of str) {
+    if (letterCounter[letter]) {
+      return true;
+    }
+    letterCounter[letter] = 1;
+  }
+
+  return false;
+}
+
+let result = findDoublers("helo");
+console.log(result);
+
+// =================================================================
 // E-Task:
 // =================================================================
 
 // Shunday function tuzing, u bitta string argumentni qabul qilib osh stringni teskari qilib return qilsin
 // masalan: getReverse("hello") return qilsin "olleh"
 
-function getReverse(word) {
-  let result = word.split("").reverse().join("");
-  console.log(result);
-}
-getReverse("hello");
+// function getReverse(word) {
+//   let result = word.split("").reverse().join("");
+//   console.log(result);
+// }
+// getReverse("hello");
 // =================================================================
 // Jack Ma maslahatlari: Callback function
 // =================================================================
@@ -56,20 +80,20 @@ getReverse("hello");
 // Javob: Endi dam oling, foydasi yo'q endi
 
 //Ordering pizza:
-function orderPizza(callback) {
-  let pizza = "Pizza";
-  setTimeout(() => {
-    console.log(`${pizza} is ready`);
-    callback(pizza);
-  }, 2000);
-}
+// function orderPizza(callback) {
+//   let pizza = "Pizza";
+//   setTimeout(() => {
+//     console.log(`${pizza} is ready`);
+//     callback(pizza);
+//   }, 2000);
+// }
 
-function eatPizza(pizza) {
-  console.log(`Eat the ${pizza}`);
-}
+// function eatPizza(pizza) {
+//   console.log(`Eat the ${pizza}`);
+// }
 
-orderPizza(eatPizza);
-console.log("Call to Ahmad");
+// orderPizza(eatPizza);
+// console.log("Call to Ahmad");
 
 // =================================================================
 // Jack Ma maslahatlari: Asynchronous functionlarni qo'llash
