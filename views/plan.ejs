@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>REJA</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+  </head>
+  <!-- navbar  -->
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          aria-hidden="true"
+          class="me-2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"
+          ></path>
+          <circle cx="12" cy="13" r="4"></circle>
+        </svg>
+        <br />
+        <strong>Joseph Web Dev</strong>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarHeader"
+        aria-controls="navbarHeader"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+  <body style="background-color: #b8bbd1">
+    <div class="container">
+      <h1 class="display-4 text-primary text-center mt-5">
+        To Do Web App
+      </h1>
+      <!-- jumbotron  -->
+      <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid">
+          <h1 class="display-5 fw-bold">About App</h1>
+          <p class="col-md-8 fs-4">
+           
+To-do list apps make your list way easier to re-order and may allow you to automate certain tasks. Boost productivity. With to-do list apps organizing and ordering your tasks, your time management will likely improve. In turn, you'll likely do more work every day.
+          </p>
+          <form id="create-form" action="/create-item" method="POST">
+            <div class="d-flex align-items-center">
+              <input
+              id="create-field"
+              name="reja"
+              autofocus
+              autocomplete="off"
+              class="form-control mr-3"
+              type="text"
+              style="flex: 1"
+              />
+              <button class="btn my-5 btn-primary btn-md" type="submit">
+                Add New Plan
+              </button>
+            </div>
+          </form>
+          <h1 class="display-5 fw-bold">Plans List</h1>
+          <ul id="item-list" class="list-group pb-5">
+            <% items.map(function(item){ %>
+            <li
+              class="list-group-item list-group-item-info d-flex align-items-center justify-content-between"
+            >
+              <span class="item-text"><%= item.reja %> </span>
+              <div>
+                <button
+                  data-id="<%= item._id  %>"
+                  class="edit-me btn btn-secondary btn-sm mr-1"
+                >
+                  Edit
+                </button>
+                <button
+                  data-id="<%= item._id  %>"
+                  class="delete-me btn btn-danger btn-sm"
+                >
+                  Delete
+                </button>
+              </div>
+            </li>
+            <% }) %>
+          </ul>
+    
+          <button id="clean-all" class="btn btn-danger btn-md">
+        Delete All
+          </button>
+        </div>
+      </div>
+
+      <!-- cards  -->
+      <!-- <div class="row align-items-md-stretch">
+        <div class="col-md-12">
+          <div class="h-100 p-5 bg-light border rounded-3">
+            <h2>Add borders</h2>
+            <p>
+              Or, keep it light and add a border for some added definition to
+              the boundaries of your content. Be sure to look under the hood at
+              the source HTML here as we've adjusted the alignment and sizing of
+              both column's content for equal-height.
+            </p>
+            <button class="btn btn-outline-secondary" type="button">
+              Example button
+            </button>
+          </div>
+        </div>
+      </div> -->
+    </div>
+</div>
+</body>
+<!-- footer  -->
+  <!-- <footer class="pt-3 mt-4 text-muted border-top">
+    <div class="container">
+        © Web Dev Team 2023
+    </div>
+  </footer> -->
+</html>

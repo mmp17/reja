@@ -27,9 +27,21 @@ app.set("views", "views");
 app.set("view engine", "ejs");
 
 //4 Routing codes - BSSR
-app.post("/create-item", (req, res) => {
-  console.log("req.body", req.body);
-  res.json({ test: "success" });
+app.post("/create-item", function (req, res) {
+  console.log("user entered /create-item");
+  console.log(req.body);
+  const new_reja = req.body.reja;
+  // Code with MongoDB
+  const newReja = req.body.reja;
+  db.collection("plans").insertOne({ reja: newReja }, (err, data) => {
+    if (err) {
+      console.log(err);
+      res.end("Something went wrong");
+    } else {
+      res.end("Successfully added");
+    }
+  });
+  // res.json({ test: "success" });
 });
 
 app.get("/author", (req, res) => {
@@ -37,8 +49,20 @@ app.get("/author", (req, res) => {
 });
 
 app.get("/", (req, res) => {
+  console.log("user entered /");
+  db.collection("plans")
+    .find()
+    .toArray((err, data) => {
+      if (err) {
+        console.log("Error", err);
+        res.end("Something went wrong");
+      } else {
+        console.log("Data", data);
+        res.render("plan", { items: data });
+      }
+    });
   // console.log("req.body", req);
-  res.render("project");
+  // res.render("project");
 });
 
 app.get("/hello", (req, res) => {
