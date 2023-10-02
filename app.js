@@ -38,14 +38,12 @@ app.post("/create-item", function (req, res) {
       console.log(err);
       res.end("Something went wrong");
     } else {
-      res.end("Successfully added");
+      console.log(data.ops);
+      res.json(data.ops[0]);
+      // res.end("Successfully added");
     }
   });
   // res.json({ test: "success" });
-});
-
-app.get("/author", (req, res) => {
-  res.render("author", { user: user });
 });
 
 app.get("/", (req, res) => {
@@ -63,6 +61,10 @@ app.get("/", (req, res) => {
     });
   // console.log("req.body", req);
   // res.render("project");
+});
+
+app.get("/author", (req, res) => {
+  res.render("author", { user: user });
 });
 
 app.get("/hello", (req, res) => {

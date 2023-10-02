@@ -3,8 +3,7 @@ const mongodb = require("mongodb");
 
 let db;
 const connectionString =
-  "mongodb+srv://user01:X6fRByv7C1oEjwXb@nodejs.i14q1bn.mongodb.net/todolist_test?retryWrites=true&w=majority";
-
+  "mongodb+srv://user01:X6fRByv7C1oEjwXb@nodejs.i14q1bn.mongodb.net/todolist_test?retryWrites=true&w=majority"; // database name: todolist_test
 // 3)
 mongodb.connect(
   connectionString,
