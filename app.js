@@ -4,6 +4,7 @@ const app = express();
 const fs = require("fs");
 
 // MonGoDB connect
+const mongodb = require("mongodb");
 const db = require("./server").db();
 
 let user;
@@ -61,6 +62,50 @@ app.get("/", (req, res) => {
     });
   // console.log("req.body", req);
   // res.render("project");
+});
+
+app.post("/delete-item", function (req, res) {
+  const id = req.body.id;
+
+  db.collection("plans").deleteOne(
+    { _id: new mongodb.ObjectId(id) },
+    function (err, data) {
+      if (data) {
+        res.json({ state: "Deleted" });
+      } else {
+        err;
+      }
+    }
+  );
+});
+
+app.post("/edit-item", (req, res) => {
+  const data = req.body;
+  db.collection("plans").findOneAndUpdate(
+    {
+      _id: new mongodb.ObjectID(data.id),
+    },
+    { $set: { reja: data.new_input } },
+    function (err, data) {
+      if (data) {
+        res.json({ state: "Edited" });
+      } else {
+        err;
+      }
+    }
+  );
+});
+
+app.post("/delete-all", (req, res) => {
+  if (req.body.delete_all) {
+    db.collection("plans").deleteMany(function (err, data) {
+      if (data) {
+        res.json({ state: "All plans are deleted" });
+      } else {
+        err;
+      }
+    });
+  }
 });
 
 app.get("/author", (req, res) => {
