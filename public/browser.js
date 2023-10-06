@@ -92,7 +92,12 @@ document.getElementById("clean-all").addEventListener("click", function () {
     .post("/delete-all", { delete_all: true })
     .then((res) => {
       alert(res.data.state);
-      document.location.reload();
+      const list = document.getElementById("item-list");
+      // document.location.reload();
+      //delete list items without refreshing the page
+      while (list.firstChild) {
+        list.removeChild(list.firstChild);
+      }
     })
     .catch((err) => {
       if (err) {
